@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import materialize.css-->
+
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/anon.css"  media="screen,projection"/>
+
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+</head>
+
+<body class = "lime">
+  <!--Import jQuery before materialize.js-->
+
+  <nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="#!" class="brand-logo center">Incognito</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="side-nav" id="mobile-demo">
+	  <li><img class="responsive-img dude-pic" src="http://a1.mzstatic.com/us/r30/Purple1/v4/82/ee/3d/82ee3df5-63dd-e9e8-1bff-b78a89b6cfc5/icon175x175.png"></li>
+		<li><a href="home.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href=".">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col s12">
+      <div class="row" id ="tagRow">
+        <div class="input-field col s12">
+          <textarea id="question" class="materialize-textarea"></textarea>
+          <label for="question">Enter Questions :P</label>
+        </div>
+        <div class="input-field col s10">
+          <input id="channels" class="channels" type="text" name="channels" class="validate">
+          <label for="channels">Channels</label>
+        </div>
+        <div class="col s2">
+          <a class="btn-floating btn-small waves-effect waves-light red" onclick="addTag()"><i class="mdi-content-add"></i></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class ="col s2">
+          <button class="btn waves-effect waves-light" onclick="postQue()" >Post<i class="mdi-content-send right"></i>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  var tags = [];
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+    $(".button-collapse").sideNav();
+  });
+  </script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

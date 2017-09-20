@@ -1,0 +1,26 @@
+/*  Team AnonNetwork
+    Anonamous Interaction Tool
+*/
+
+
+.widget-item
+{
+  padding:10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.tabs
+{
+  content:#fff;
+  background-color: #000;
+}
+nav
+{
+    bacground-color:#e4e4e4;
+    margin-bottom: 20px;
+}
+
+#anon-post
+{
+    font-size:10px;
+}

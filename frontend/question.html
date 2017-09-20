@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import materialize.css-->
+
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/anon.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+</head>
+
+<body class = "lime">
+  <!--Import jQuery before materialize.js-->
+
+  <nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="/home.html" class="brand-logo center">Incognito</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="side-nav" id="mobile-demo">
+	  <li><img class="responsive-img dude-pic" src="http://a1.mzstatic.com/us/r30/Purple1/v4/82/ee/3d/82ee3df5-63dd-e9e8-1bff-b78a89b6cfc5/icon175x175.png"></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href=".">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Question Title Start Here -->
+  <div class="container">
+  <div class ="row">
+
+    <ul class="collection with-header">
+       <li id="quesstat" class="collection-header"><b>
+         Questions here
+       </b></li><br>
+         <!-- Loop from here -->
+       <li class="collection-item">Answer</li>
+       <div class="divider"></div>
+     </ul>
+     <div class="input-field col s12">
+       <textarea id="reply" class="materialize-textarea"></textarea>
+       <label for="reply">Reply :P</label>
+     </div>
+     <div class="row">
+       <div class ="col s2">
+         <button class="btn waves-effect waves-light" onclick="postQue()" >Reply<i class="mdi-content-send right"></i>
+         </button>
+       </div>
+     </div>
+
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+    $(".button-collapse").sideNav();
+    //console.log(localStorage.getItem('quesstat'));
+    //$('#quesstat').html(localStorage.getItem('quesstat'));
+    var xhr4 = new XMLHttpRequest({mozSystem:true});
+    xhr4.open("GET", "http://localhost/annonetwork/backend/tempget.php", false);
+    xhr4.send();
+
+    var myobj = JSON.parse(xhr4.responseText);
+    console.log(myobj);
+    $('#quesstat').html(myobj['quesstat']);
+  });
+  </script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
